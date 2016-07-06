@@ -82,3 +82,5 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+alias ekpssh="ssh sbrommer@ekplx30.physik.uni-karlsruhe.de -L 8080:ekplx30.physik.uni-karlsruhe.de:8080"
