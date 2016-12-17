@@ -5,7 +5,7 @@ export TERM="xterm-256color"
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="avit"
+ZSH_THEME="spaceship"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -57,7 +57,9 @@ plugins=(git pip python sudo command-not-found)
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
-
+cd ~/tools/root
+source ./bin/thisroot.sh
+cd ~/
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
@@ -82,5 +84,8 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
+alias LTSplice="playonlinux --run LTSplice"
 alias ekpssh="ssh sbrommer@ekplx30.physik.uni-karlsruhe.de -L 8080:ekplx30.physik.uni-karlsruhe.de:8080"
+
+export NVM_DIR="/home/sebi/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
