@@ -84,8 +84,11 @@ cd ~/
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias altera="~/tools/altera/quartus/quartus/bin/quartus"
 alias LTSplice="playonlinux --run LTSplice"
 alias ekpssh="ssh sbrommer@ekplx30.physik.uni-karlsruhe.de -L 8080:ekplx30.physik.uni-karlsruhe.de:8080"
-
+# multidisplaysupport
+alias display_on="xrandr --output eDP1 --auto --right-of HDMI1"
+alias display_off="xrandr --auto"
 export NVM_DIR="/home/sebi/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
