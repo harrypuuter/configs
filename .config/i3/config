@@ -170,5 +170,6 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightne
 bindsym $mod+Shift+f exec i3lock -d -i ~/Bilder/wallpaper.png
 exec --no-startup-id xautolock -time 10 -locker 'i3lock -d -i ~/Bilder/wallpaper.png
 
+exec gnome-settings-daemon
 # switch workspaces between screens
 bindsym $mod+p move workspace to output right
