@@ -93,3 +93,7 @@ alias display_on="xrandr --output eDP1 --auto --right-of HDMI1"
 alias display_off="xrandr --auto"
 export NVM_DIR="/home/sebi/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# added by Miniconda3 4.3.21 installer
+export PATH="/home/sebi/tools/miniconda3/bin:$PATH"
+
