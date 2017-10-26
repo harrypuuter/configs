@@ -23,6 +23,9 @@ font pango:DejaVu Sans Mono 8
 gaps inner 5
 gaps outer 8
 
+# polybar
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
 # hide indicator
 hide_edge_borders both
 
