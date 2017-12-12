@@ -191,3 +191,7 @@ exec --no-startup-id xautolock -time 10 -locker 'i3lock -d -i ~/Bilder/wallpaper
 exec gnome-settings-daemon
 # switch workspaces between screens
 bindsym $mod+p move workspace to output right
+# compton to get transparancy to work 
+exec --no-startup-id compton
+# add launcher albert
+exec --no-startup-id albert
