@@ -1,12 +1,13 @@
-# configs
-Collection of several configuration files
+# Dotfiles
+Collection of my current dotfiles for my setup
+## Screenshot
 
-My Config files, using several tools:
+![Screenshot](https://imgur.com/a/Z52Nb)
+## Tools Used:
 
-```
-i3
-i3status
-zsh
-oh-my-zsh
-i3-weather
-```
+* [i3-gaps](https://github.com/Airblader/i3)
+* [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
+* [polybar](https://github.com/jaagr/polybar)
+* [betterlockscreen](https://github.com/pavanjadhaw/betterlockscreen)
+* [albert](https://github.com/albertlauncher/albert)
+
