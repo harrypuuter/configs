@@ -1,24 +1,15 @@
 [colors]
-background = #222
-foreground = #eee
+background = #292a44
+foreground = #ffbc69
 linecolor = #fba922
 bordercolor = #333
 accent = #e60053
 
 [settings]
 screenchange-reload = true
-;throttle-output-for = 10
-;throttle-output = 5
-;throttle-input-for = 40
-
-;compositing-background = over
-;compositing-background = screen
-;compositing-foreground = xor
-;compositing-foreground = source
-;compositing-border = over
 
 [global/wm]
-margin-top = 0
+margin-top = 5
 margin-bottom = 0
 
 [bar/top]
@@ -26,48 +17,35 @@ enable-ipc = true
 monitor = ${env:MONITOR:eDP1}
 width = 100%
 height = 24
-;radius = 5.0
-;fixed-center = false
-;1override-redirect = true
+#radius = 5.0
+fixed-center = false
+1override-redirect = true
 
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-;background-0 = #333
-;background-1 = #222
-;background-2 = ${self.background-1}
-;background-3 = ${self.background-1}
-;background-4 = ${self.background-1}
-;background-5 = ${self.background-1}
-;background-6 = ${self.background-1}
-;background-7 = #111
-
-line-color = ${colors.linecolor}
-underline-size = 1
 overline-size = 2
 
-;border-size = 5
-;border-color = 0
-;border-bottom-size = 0
-border-bottom-size = 2
+border-size = 1
+border-top-size = 1
+border-bottom-size = 1
 border-bottom-color = ${colors.bordercolor}
 
 padding-left = 0
-padding-right = 2
+padding-right = 1
 module-margin-left = 1
 module-margin-right = 2
 
 font-0 = dina:pixelsize=9;1
-font-1 = FontAwesome:pixelsize=9;0
+font-1 = FontAwesome:pixelsize=9;1
 font-2 = unifont:size=6;1
 
 modules-left = i3
-;modules-center = mpd
 modules-center = xwindow spotify
-modules-right = xbacklight volume wifi battery filesystem memory cpu date
+modules-right = xbacklight volume wifi battery filesystem date
 
 tray-position = right
-tray-padding = 4
+tray-padding = 1
 tray-maxsize = 16
 ;tray-transparent = true
 ;tray-detached = true
@@ -75,11 +53,6 @@ tray-maxsize = 16
 
 wm-restack = bspwm
 
-;dim-value = 0.2
-
-;click-left =
-;click-middle =
-;click-right =
 scroll-up = bspwm-deskprev
 scroll-down = bspwm-desknext
 ;scroll-up = i3wm-wsnext
@@ -96,20 +69,6 @@ bspwm-focused-underline = #cc333333
 type = internal/fs
 mount-0 = /
 label-mounted = %{F#e60053}%percentage_used%%%{F-} used of %mountpoint%
-
-[module/cpu]
-type = internal/cpu
-interval = 2
-label = %percentage%%
-format-prefix = " "
-format-prefix-foreground = #666
-
-[module/memory]
-type = internal/memory
-interval = 2
-label = %percentage_used%%
-format-prefix = ""
-format-prefix-foreground = #666
 
 [module/wifi]
 type = internal/network
@@ -140,35 +99,26 @@ interval = 5
 
 [module/xbacklight]
 type = internal/xbacklight
-format = <ramp> <label>
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
+format =  <label>
 ramp-foreground = #666
 label-foreground = ${root.foreground}
 
 [module/volume]
 type = internal/volume
-speaker-mixer = Speaker
-headphone-mixer = Headphone
-headphone-id = 9
+master-soundcard = default
 
 format-volume = <ramp-volume> <label-volume>
-label-volume = %percentage%%
-label-volume-foreground = ${root.foreground}
+module-margin-right = 0
 
-format-muted-prefix = " "
-format-muted-foreground = #777
-label-muted = sound muted
+ramp-volume-0 =
+ramp-volume-1 =
+ramp-volume-2 =
+ramp-volume-3 =
 
-ramp-volume-0 = 
-ramp-volume-1 = 
-ramp-volume-2 = 
-ramp-volume-foreground = #666
+label-muted = 
+ramp-headphones-0 = 
 
-ramp-headphones-0 = 
-ramp-headphones-1 = 
-ramp-headphones-foreground = #666
+interval = 2
 
 [module/battery]
 type = internal/battery
@@ -204,41 +154,6 @@ exec =   ~/.config/polybar/spotify.sh %artist% - %title%
 tail = true
 interval = 2
 
-[module/power-menu]
-type = custom/menu
-
-label-open = "Menu"
-label-close = "x"
-label-separator = /
-label-separator-margin = 1
-
-menu-0-0 = Terminate WM
-menu-0-0-foreground = ${colors.accent}
-menu-0-0-exec = bspc quit -1
-menu-0-1 = Reboot
-menu-0-1-foreground = ${colors.accent}
-menu-0-1-exec = menu-open-1
-menu-0-2 = Power off
-menu-0-2-foreground = ${colors.accent}
-menu-0-2-exec = menu-open-2
-menu-0-3 = Lock
-menu-0-3-foreground = ${colors.accent}
-menu-0-3-exec = lockscreen
-
-menu-1-0 = Cancel
-menu-1-0-foreground = ${colors.accent}
-menu-1-0-exec = menu-open-0
-menu-1-1 = Reboot
-menu-1-1-foreground = ${colors.accent}
-menu-1-1-exec = sudo reboot
-
-menu-2-0 = Power off
-menu-2-0-foreground = ${colors.accent}
-menu-2-0-exec = sudo poweroff
-menu-2-1 = Cancel
-menu-2-1-foreground = ${colors.accent}
-menu-2-1-exec = menu-open-0
-
 [module/filesystem]
 type = internal/fs
 interval = 30
@@ -246,9 +161,7 @@ mount-0 = /
 fixed-values = true
 spacing = 0
 format-mounted = <label-mounted>
-label-mounted = " %{F#4cbeec}%mountpoint%%{F-}  %percentage_used%% "
-label-mounted-foreground = #c7c4c0
-label-mounted-background = #232323
+label-mounted = "  %percentage_used%%  fulll"
 
 [module/xwindow]
 type = internal/xwindow

@@ -20,9 +20,9 @@ set $mod Mod4
 font pango:DejaVu Sans Mono 10
 
 # gaps
-gaps inner 5
+gaps inner 10
 gaps outer 10
-smart_gaps on
+#smart_gaps on
 
 # polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
@@ -59,7 +59,7 @@ bindsym $mod+Shift+q kill
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
-bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
 bindsym $mod+j focus left
@@ -174,7 +174,7 @@ bindsym $mod+r mode "resize"
  #       status_command i3status | ~/tools/i3-weather/weather.py --wrap-i3-status 12836182 --unit c --format {city},{region}:{text},{temp}°{unit_temperature},Sun:{sunrise}-{sunset}
   #      tray_output primary
 #}
-exec --no-startup-id feh --bg-scale ~/Bilder/wallpaper.png
+# exec --no-startup-id feh --bg-scale ~/Bilder/wallpaper.png
 # exec --no-startup-id kde5-nm-connection-editor
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
@@ -185,9 +185,15 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute s
 bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightnes
 
+#Lock Screen
+# where Pictures/Wallpapers is the directory you would want to get random wallpapers from
+exec --no-startup-id betterlockscreen -u ~/Bilder/wallpaper
 # lockin screen
-bindsym $mod+Shift+f exec i3lock -d -i ~/Bilder/wallpaper.png
-exec --no-startup-id xautolock -time 10 -locker 'i3lock -d -i ~/Bilder/wallpaper.png'
+# custom keybinding to lockscreen, use --lock dim or --lock blur below for different backgrounds
+bindsym $mod+shift+x exec betterlockscreen --lock dim
+# Set last used image as desktop background
+exec --no-startup-id betterlockscreen -w
+
 exec gnome-settings-daemon
 # switch workspaces between screens
 bindsym $mod+p move workspace to output right

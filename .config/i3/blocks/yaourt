@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+
+################################
+# Shows packages that need updated.
+#
+# Dependencies:
+# - yaourt
+################################
+
+full=""
+short=""
+color=""
+status=0
+
+
+# Refresh package lists
+yaourt -Sya
+
+
+arch=$(yaourt -Qu | wc -l)
+aurToo=$(yaourt -Qua | wc -l)
+aur=$(echo "$aurToo - $arch" | bc)
+
+
+full="ARCH: $arch, AUR: $aur"
+short="$arch/$aur"
+
+
+echo $full
+echo $short
+echo $color
+exit $status
