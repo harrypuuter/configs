@@ -2,7 +2,7 @@
 Collection of my current dotfiles for my setup
 ## Screenshot
 
-![Screenshot](https://imgur.com/a/Z52Nb)
+![Screenshot](https://i.imgur.com/r4Nazz7.png)
 ## Tools Used:
 
 * [i3-gaps](https://github.com/Airblader/i3)
