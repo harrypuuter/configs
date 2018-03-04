@@ -95,3 +95,5 @@ export NVM_DIR="/home/sebi/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 alias mensa="w3m mensa.akk.uni-karlsruhe.de"
 alias rechner="cd ~/OneDrive/Universität/Master/Betreuung\ Rechnernutzung"
+
+eval `keychain --eval --agents ssh id_rsa`
